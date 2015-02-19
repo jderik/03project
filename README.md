@@ -1,18 +1,14 @@
 # Getting and Cleaning data Course Project
-
 ############################################################
 #######Initialise   variables & WD ##########################
 setwd("./UCI HAR Dataset")
-
-
-
 #############################################################
-##  Read test and trainng data #########################
-### 'train/X_train.txt': Training set.
-### 'train/y_train.txt': Training labels.
-### 'test/X_test.txt': Test set.
-# 'test/y_test.txt': Test labels.
-# 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+###  Read test and training data #########################
+ 'train/X_train.txt': Training set.
+ 'train/y_train.txt': Training labels.
+ 'test/X_test.txt': Test set.
+ 'test/y_test.txt': Test labels.
+ 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
 X-Train <- read.table("train/X_train.txt", header=FALSE)
 Y-Train <- read.table ("train/Y_train.txt", header=FALSE)
