@@ -5,14 +5,19 @@
 
 ### Contents of Repo
 
-* run_analysis.R     --> This is the script that works with the dataset.
-* Codebook.md        --> This explains the work done by the script with regards to processing and transformation.
-* datastructure.png  --> An important diagram that helps understand the strucutre requierd of the data set.
-* datasetaverage.txt --> Tidy data set output by run_analysis.R
+* run_analysis.R      --> This is the script that works with the dataset.
+* Codebook.md         --> This explains the work done by the script with regards to processing and transformation.
+* datastructure.png   --> An important diagram that helps understand the strucutre requierd of the data set.
+* datasetaverage.txt  --> Tidy data set output by run_analysis.R
+* readme.md           --> This file.
 
 ### Contents not in the Repo but required to be installed in the working directory before running the script.
 * Unzip and place the directory ***UCI HR DATASEST*** in the working directory before executing run_analysis.R.
 * Location of the zipped dataset file is found [here] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+### Execution
+* Please set the working directory correctly.
+* In R/R Studio type *source("run_analysis.r")*
 
 ### This image helped identify the processing of the raw data
 
