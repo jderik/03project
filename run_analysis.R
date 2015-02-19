@@ -2,12 +2,17 @@
 
 
 #############################################################
-#######  Read test and trainng data #########################
+#######  Read test and training data ########################
+####### These are the files that will be read ###############
 # 'train/X_train.txt': Training set.
 # 'train/y_train.txt': Training labels.
 # 'test/X_test.txt': Test set.
 # 'test/y_test.txt': Test labels.
 # 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+# 'test/Subject_test.txt' : Subject test data
+# 'features_info.txt': Shows information about the variables used on the feature vector.
+# 'features.txt': List of all features.
+# 'activity_labels.txt': Links the class labels with their activity name.
 
 XTrain <- read.table("UCI HAR Dataset/train/X_train.txt", header=FALSE)
 YTrain <- read.table ("UCI HAR Dataset/train/Y_train.txt", header=FALSE)
