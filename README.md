@@ -8,7 +8,7 @@ setwd("./UCI HAR Dataset")
 
 #############################################################
 #######  Read test and trainng data #########################
-# 'train/X_train.txt': Training set.
+## 'train/X_train.txt': Training set.
 # 'train/y_train.txt': Training labels.
 # 'test/X_test.txt': Test set.
 # 'test/y_test.txt': Test labels.
