@@ -7,10 +7,10 @@ setwd("./UCI HAR Dataset")
 
 
 #############################################################
-#######  Read test and trainng data #########################
-## 'train/X_train.txt': Training set.
-# 'train/y_train.txt': Training labels.
-# 'test/X_test.txt': Test set.
+##  Read test and trainng data #########################
+### 'train/X_train.txt': Training set.
+### 'train/y_train.txt': Training labels.
+### 'test/X_test.txt': Test set.
 # 'test/y_test.txt': Test labels.
 # 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
