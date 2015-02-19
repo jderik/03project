@@ -10,6 +10,15 @@
  'test/y_test.txt': Test labels.
  
  'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+ 
+ 'test/Subject_test.txt' : Subject test data
+
+ 'features_info.txt': Shows information about the variables used on the feature vector.
+
+ 'features.txt': List of all features.
+
+ 'activity_labels.txt': Links the class labels with their activity name.
+
 ###  Read test and training data
 XTrain <- read.table("UCI HAR Dataset/train/X_train.txt", header=FALSE)
 
@@ -66,3 +75,10 @@ names(datasetfinal)<-gsub("Mag", "Magnitude", names(datasetfinal))
 
 names(datasetfinal)<-gsub("BodyBody", "Body", names(datasetfinal))
 
+### Tidy data Set generation usig PLYR
+#### Load plyr 
+library(plyr)
+
+datasetaverage <- ddply(datasetfinal, .(Subject, Activity), function(x) colMeans(x[, 1:66]))
+#### Create Tidy Data Set called datasetaverage.txt ; This is uploaded to repository 
+write.table(datasetaverage, "datasetaverage.txt", row.name=FALSE)
