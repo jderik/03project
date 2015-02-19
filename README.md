@@ -17,7 +17,6 @@ SUB-Test <-read.table("test/subject_test.txt", header=FALSE)
 X-Test  <- read.table("test/X_test.txt", header=FALSE)
 Y-Test  <- read.table("test/Y_test.txt", header=FALSE)
 
-
 #############################################################
 #######  Merge the data of these three sets##################
 
@@ -27,7 +26,7 @@ dataX<- rbind(X-Train,X-Test)
 
 #############################################################
 ####################  Naming as per #########################
-####https://class.coursera.org/getdata-011/forum/thread?thread_id=181#####################
+######https://class.coursera.org/getdata-011/forum/thread?thread_id=181 #####################
 names(dataSUB)<-c("Subject")
 names(dataY)<- c("Activity")
 dataXnames <- read.table("features.txt",head=FALSE)
