@@ -1,8 +1,5 @@
 ## Getting and Cleaning data Course Project
 
-###Initialise   variables & WD 
-setwd("./UCI HAR Dataset")
-
 ###  File details  #########################
  'train/X_train.txt': Training set.
  
@@ -14,35 +11,35 @@ setwd("./UCI HAR Dataset")
  
  'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 ###  Read test and training data
-X-Train <- read.table("train/X_train.txt", header=FALSE)
+XTrain <- read.table("UCI HAR Dataset/train/X_train.txt", header=FALSE)
 
-Y-Train <- read.table ("train/Y_train.txt", header=FALSE)
+YTrain <- read.table ("UCI HAR Dataset/train/Y_train.txt", header=FALSE)
 
-SUB-Train <-read.table("train/subject_train.txt", header=FALSE)
+SUBTrain <-read.table("UCI HAR Dataset/train/subject_train.txt", header=FALSE)
 
-SUB-Test <-read.table("test/subject_test.txt", header=FALSE)
+SUBTest <-read.table("UCI HAR Dataset/test/subject_test.txt", header=FALSE)
 
-X-Test  <- read.table("test/X_test.txt", header=FALSE)
+XTest  <- read.table("UCI HAR Dataset/test/X_test.txt", header=FALSE)
 
-Y-Test  <- read.table("test/Y_test.txt", header=FALSE)
-
-
-####  Merge the data of these three sets##################
-
-dataSUB <- rbind(SUB-Train, SUB_Test)
-
-dataY<- rbind(Y-Train,Y-Test)
-
-dataX<- rbind(X-Train,X-Test)
+YTest  <- read.table("UCI HAR Dataset/test/Y_test.txt", header=FALSE)
 
 
-###  Naming the data sets as per https://class.coursera.org/getdata-011/forum/thread?thread_id=181 
+###  Merge the data of these three sets##################
+
+dataSUB <- rbind(SUBTrain, SUBTest)
+
+dataY<- rbind(YTrain,YTest)
+
+dataX<- rbind(XTrain,XTest)
+
+
+###  Naming the data sets activities with descriptive activity names
 
 names(dataSUB)<-c("Subject")
 
 names(dataY)<- c("Activity")
 
-dataXnames <- read.table("features.txt",head=FALSE)
+dataXnames <- read.table("UCI HAR Dataset/features.txt",head=FALSE)
 
 names(dataX)<- dataXnames$V2
 
@@ -51,4 +48,21 @@ names(dataX)<- dataXnames$V2
 dataset01 <- cbind(dataSUB, dataY)
 
 datasetfinal <- cbind(dataX, dataset01)
+
+At this point the names(datasetfinal) looks like below (some random samples)
+[33] "tBodyAcc-arCoeff()-Y,4"  ;  [64] "tGravityAcc-entropy()-Y" ; [69] "tGravityAcc-arCoeff()-X,4" ; [172] "tBodyGyroJerk-max()-Z" ; [553] "fBodyBodyGyroJerkMag-skewness()"
+
+### Apply descriptive activity Labels to the variable names as evidenced above.
+
+names(datasetfinal)<-gsub("^t", "time", names(datasetfinal))
+
+names(datasetfinal)<-gsub("^f", "frequency", names(datasetfinal))
+
+names(datasetfinal)<-gsub("Acc", "Accelerometer", names(datasetfinal))
+
+names(datasetfinal)<-gsub("Gyro", "Gyroscope", names(datasetfinal))
+
+names(datasetfinal)<-gsub("Mag", "Magnitude", names(datasetfinal))
+
+names(datasetfinal)<-gsub("BodyBody", "Body", names(datasetfinal))
 
