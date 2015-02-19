@@ -1,6 +1,5 @@
 ### Course Project - Getting and Cleaning Data.
 
-
 #############################################################
 #######  Read test and training data ########################
 ####### These are the files that will be read ###############
